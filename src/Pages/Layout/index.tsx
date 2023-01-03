@@ -1,5 +1,6 @@
 import { Home } from '../Home';
-import { Header } from './Header';
+import { Footer } from './Components/Footer';
+import { Header } from './Components/Header';
 import * as S from './styles';
 
 export const Layout: React.FC = () => {
@@ -7,6 +8,7 @@ export const Layout: React.FC = () => {
     <S.Wrapper>
       <Header />
       <Home />
+      <Footer />
     </S.Wrapper>
   );
 };

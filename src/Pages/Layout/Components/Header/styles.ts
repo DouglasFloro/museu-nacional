@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Museu from '../../../assets/images/logo.png';
+import Museu from '../../../../assets/images/logo.png';
 
 export const Wrapper = styled.div`
   width: 100%;
