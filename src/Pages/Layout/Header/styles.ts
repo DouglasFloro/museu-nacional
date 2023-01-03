@@ -26,10 +26,7 @@ export const Logo = styled.div`
 `;
 
 export const Navigation = styled.ul`
-  height: 100px;
-
   display: flex;
-  align-items: flex-end;
   list-style: none;
   margin: 20px;
 
