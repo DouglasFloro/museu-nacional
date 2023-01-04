@@ -75,7 +75,7 @@ export const Home: React.FC = () => {
           <img src={Depoimento} alt="" />
           <S.Visit>
             {formVisit.map((value) => (
-              <>
+              <div key={value.title}>
                 <h4>{value.title}</h4>
                 <form>
                   <fieldset>
@@ -91,7 +91,7 @@ export const Home: React.FC = () => {
                   </fieldset>
                   <button>{value.button}</button>
                 </form>
-              </>
+              </div>
             ))}
           </S.Visit>
 
