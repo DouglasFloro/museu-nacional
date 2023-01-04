@@ -1,3 +1,7 @@
+/**
+ * Lista da navegação
+ * @returns Array name:string
+ */
 export const navList: { name: string; id: number }[] = [
   {
     id: 0,

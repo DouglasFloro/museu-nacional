@@ -46,7 +46,7 @@ export const Home: React.FC = () => {
               <ul>
                 <li>
                   <a href="">Os assustadoes insentos</a>
-                </li>{' '}
+                </li>
                 <li>
                   <a href="">O gigante rinoceronte</a>
                 </li>
