@@ -1,10 +1,12 @@
 import * as S from './styles';
 import Museu from '../../assets/images/museu.png';
 import Depoimento from '../../assets/images/depoimento.png';
-import Imagem1 from '../../assets/images/imagem1.jpg';
-import Imagem2 from '../../assets/images/imagem2.jpg';
-import Imagem3 from '../../assets/images/imagem3.jpg';
-import Imagem4 from '../../assets/images/imagem4.jpg';
+import {
+  exhibitionList,
+  formVisit,
+  galleryPhoto,
+  historyMuseu,
+} from './mapped';
 
 export const Home: React.FC = () => {
   return (
@@ -44,24 +46,11 @@ export const Home: React.FC = () => {
               <h3>Exposições</h3>
 
               <ul>
-                <li>
-                  <a href="">Os assustadoes insentos</a>
-                </li>
-                <li>
-                  <a href="">O gigante rinoceronte</a>
-                </li>
-                <li>
-                  <a href="">A maio pata de elefante</a>
-                </li>
-                <li>
-                  <a href="">Plantas do Brasil Central</a>
-                </li>
-                <li>
-                  <a href="">Arte com dinossauro</a>
-                </li>
-                <li>
-                  <a href="">Pirâmides </a>
-                </li>
+                {exhibitionList.map((value) => (
+                  <li key={value.id}>
+                    <a href="">{value.name}</a>
+                  </li>
+                ))}
                 <li>
                   <a href="">
                     <strong>Veja todos</strong>
@@ -70,16 +59,12 @@ export const Home: React.FC = () => {
               </ul>
             </S.Exhibition>
             <S.History>
-              <h3>200 Anos de História</h3>
-
-              <p>
-                O Museu Nacional, vinculado à Universidade Federal do Rio de
-                Janeiro, é a mais antiga instituição científica do Brasil que,
-                até setembro de 2018, figurou como um dos maiores museus de
-                história natural e de antropologia das Américas.Localiza-se no
-                interior do parque da Quinta da Boa Vista, na cidade do Rio de
-                Janeiro, estando instalado no Palácio de São Cristóvão.
-              </p>
+              {historyMuseu.map((value) => (
+                <div key={value.title}>
+                  <h3>{value.title}</h3>
+                  <p>{value.text}</p>
+                </div>
+              ))}
               <a href="">
                 <strong>Leia Mais</strong>
               </a>
@@ -89,38 +74,36 @@ export const Home: React.FC = () => {
         <S.Sidebar>
           <img src={Depoimento} alt="" />
           <S.Visit>
-            <h4>Faça uma Visita</h4>
-            <form>
-              <fieldset>
-                <legend>Selecione uma Data</legend>
+            {formVisit.map((value) => (
+              <>
+                <h4>{value.title}</h4>
+                <form>
+                  <fieldset>
+                    <legend>{value.legend}</legend>
 
-                <label htmlFor="data">Data</label>
-                <input type="text" id="data" />
-                <div>
-                  <label htmlFor="qtd">Qtds Pessoas</label>
-                  <input type="text" id="qtd" />
-                </div>
-              </fieldset>
-              <button>Verificar Disponibilidade </button>
-            </form>
+                    <label htmlFor="data">{value.date}</label>
+                    <input type="text" id="data" />
+
+                    <div>
+                      <label htmlFor="qtd">{value.amount}</label>
+                      <input type="text" id="qtd" />
+                    </div>
+                  </fieldset>
+                  <button>{value.button}</button>
+                </form>
+              </>
+            ))}
           </S.Visit>
 
           <S.Gallery>
             <h4>Galeria de Fotos</h4>
-            <div>
-              <a href="">
-                <img src={Imagem1} alt="" />
-              </a>
-              <a href="">
-                <img src={Imagem2} alt="" />
-              </a>
-              <a href="">
-                <img src={Imagem3} alt="" />
-              </a>
-              <a href="">
-                <img src={Imagem4} alt="" />
-              </a>
-            </div>
+            {galleryPhoto.map((value) => (
+              <div key={value.id}>
+                <a href="">
+                  <img src={value.image} alt="" />
+                </a>
+              </div>
+            ))}
           </S.Gallery>
         </S.Sidebar>
       </S.Container>

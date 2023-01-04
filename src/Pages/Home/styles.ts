@@ -20,17 +20,6 @@ export const Content = styled.div`
     font-size: 1em;
     text-transform: uppercase;
   }
-  ul li {
-    padding: 5px 10px;
-  }
-
-  a {
-    color: #af670a;
-    text-decoration: none;
-  }
-  a:hover {
-    color: #227115;
-  }
 `;
 export const Sidebar = styled.div`
   width: 350px;
@@ -70,6 +59,7 @@ export const Visit = styled.div`
     height: 40px;
     width: 100%;
 
+    margin-top: 25px;
     background: #9b9271;
     color: #fff;
     font-size: 1.2em;
@@ -79,12 +69,13 @@ export const Visit = styled.div`
 
 export const Gallery = styled.div`
   margin-top: 10px;
-  padding: 27px 0 0 27px;
+  padding: 30px 0 0 30px;
 
   h4 {
     color: #86521a;
     text-transform: uppercase;
     padding-bottom: 3px;
+    margin-bottom: 20px;
   }
 
   a img {
@@ -121,6 +112,18 @@ export const Info = styled.div`
 
 export const Exhibition = styled.div`
   width: 350px;
+
+  ul li {
+    padding: 5px 10px;
+  }
+
+  a {
+    color: #af670a;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #227115;
+  }
 `;
 
 export const History = styled.div`
