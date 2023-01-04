@@ -1,3 +1,4 @@
+import { navList } from './mapped';
 import * as S from './styles';
 
 export const Header: React.FC = () => {
@@ -11,24 +12,11 @@ export const Header: React.FC = () => {
         </S.Logo>
 
         <S.Navigation>
-          <li>
-            <a href="">Home</a>
-          </li>
-          <li>
-            <a href="">Exposições</a>
-          </li>
-          <li>
-            <a href="">Pesquisas</a>
-          </li>
-          <li>
-            <a href="">Vídeos</a>
-          </li>
-          <li>
-            <a href="">Fotos</a>
-          </li>
-          <li>
-            <a href="">Contatos</a>
-          </li>
+          {navList.map((value) => (
+            <li key={value.id}>
+              <a href="">{value.name}</a>
+            </li>
+          ))}
         </S.Navigation>
       </S.Container>
     </S.Wrapper>
